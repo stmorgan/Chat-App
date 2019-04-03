@@ -1,3 +1,5 @@
+// Client-side code. 
+
 let socket = io(); 
 
 socket.on("connect", function () {
@@ -8,7 +10,14 @@ socket.on("disconnect", function () {
     console.log('Disconnected from server.');
 });
 
-
 socket.on('newMessage', function (message){
     console.log("newMessage", message); 
 });
+
+
+socket.emit('createMessage', {
+    from: 'John',
+    text: 'Hey'
+}, function (message) {
+    console.log('Got it.', message) 
+}); 
