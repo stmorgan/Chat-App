@@ -12,3 +12,12 @@ describe('Generate Message', () => {
         expect(message).toMatchObject({from, text});
     });
 });
+
+describe('Generate Location Message', ()=> {
+    it('should generate correct location object', () => {
+        let from = 'Claire', 
+            lat = 15,
+            lng = 56
+            url = `https://www.google.com/maps?q=${lat}, ${lng}`
+    })
+})
